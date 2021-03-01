@@ -1,9 +1,18 @@
-<mat-nav-list >
-  <a
-    *ngFor="let post of posts"
-    mat-list-item
-    [routerLink]="['post', post.id]"
-  >
-  {{post.title}}</a>
-</mat-nav-list>
+<mat-card>
+  <mat-card-title>Posts</mat-card-title>
+  <mat-nav-list>
+    <a
+      *ngFor="let post of displayedPosts"
+      mat-list-item
+      [routerLink]="['post', post.id]"
+    >
+    {{post.title}}</a>
+  </mat-nav-list>
+</mat-card>
 
+<mat-paginator
+  [length]='allPostsCount'
+  [pageSize]='pageSize'
+  (page)='onPageChange($event)'
+>
+</mat-paginator>

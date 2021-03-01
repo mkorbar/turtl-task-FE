@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { ListPostsComponent } from './posts/list-posts/list-posts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     AppRoutingModule,
     MatListModule,
+    MatPaginatorModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],
