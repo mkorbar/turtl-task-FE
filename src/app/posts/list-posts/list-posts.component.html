@@ -1,4 +1,5 @@
-<mat-card>
+<mat-spinner *ngIf="!displayedPosts"></mat-spinner>
+<mat-card *ngIf="displayedPosts">
   <mat-card-title>Posts</mat-card-title>
   <mat-nav-list>
     <a

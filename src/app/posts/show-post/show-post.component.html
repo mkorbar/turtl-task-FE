@@ -1,0 +1,8 @@
+<mat-spinner *ngIf="!post"></mat-spinner>
+<mat-card *ngIf="post">
+  <mat-card-title>{{post.title}}</mat-card-title>
+  <mat-card-content>{{post.body}}</mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" routerLink="/">Back</a>
+  </mat-card-actions>
+</mat-card>
