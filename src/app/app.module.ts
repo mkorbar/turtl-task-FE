@@ -10,11 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ShowPostComponent } from './posts/show-post/show-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListPostsComponent
+    ListPostsComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,

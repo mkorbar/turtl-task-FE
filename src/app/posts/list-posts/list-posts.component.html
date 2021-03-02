@@ -4,7 +4,7 @@
     <a
       *ngFor="let post of displayedPosts"
       mat-list-item
-      [routerLink]="['post', post.id]"
+      [routerLink]="post.id"
     >
     {{post.title}}</a>
   </mat-nav-list>
