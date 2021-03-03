@@ -1,7 +1,7 @@
-<mat-spinner *ngIf="!posts"></mat-spinner>
-<mat-card *ngIf="posts">
+<mat-card>
   <mat-card-title>Posts</mat-card-title>
-  <mat-nav-list>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <mat-nav-list *ngIf="!loading">
     <a
       *ngFor="let post of posts"
       mat-list-item

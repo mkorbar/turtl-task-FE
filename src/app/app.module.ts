@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ShowPostComponent } from './posts/show-post/show-post.component';
 import { ListPostsComponent } from './posts/list-posts/list-posts.component';
@@ -30,6 +31,7 @@ import { ListPostsComponent } from './posts/list-posts/list-posts.component';
     MatCardModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatSnackBarModule,
     BrowserAnimationsModule
   ],
   providers: [],

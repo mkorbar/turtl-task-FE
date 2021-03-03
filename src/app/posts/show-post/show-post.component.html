@@ -1,5 +1,5 @@
-<mat-spinner *ngIf="!post"></mat-spinner>
-<mat-card *ngIf="post">
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading">
   <mat-card-title>{{post.title}}</mat-card-title>
   <mat-card-content>{{post.body}}</mat-card-content>
   <mat-card-actions>
