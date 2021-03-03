@@ -16,9 +16,9 @@ export class ShowPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((parmMap: ParamMap) => {
-      const postId = +parmMap.get('id');
-      this.postsService.getPost(postId).subscribe(post => {
-        this.post = post;
+      const postId = parmMap.get('id');
+      this.postsService.getPost(postId).subscribe(response => {
+        this.post = response.post;
       })
     })
   }

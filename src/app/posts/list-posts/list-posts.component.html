@@ -1,11 +1,11 @@
-<mat-spinner *ngIf="!displayedPosts"></mat-spinner>
-<mat-card *ngIf="displayedPosts">
+<mat-spinner *ngIf="!posts"></mat-spinner>
+<mat-card *ngIf="posts">
   <mat-card-title>Posts</mat-card-title>
   <mat-nav-list>
     <a
-      *ngFor="let post of displayedPosts"
+      *ngFor="let post of posts"
       mat-list-item
-      [routerLink]="post.id"
+      [routerLink]="post._id"
     >
     {{post.title}}</a>
   </mat-nav-list>

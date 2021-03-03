@@ -13,24 +13,26 @@ export class ListPostsComponent implements OnInit {
   posts: Post[];
   allPostsCount = 0;
   pageSize = 10;
-  displayedPosts: Post[];
+  currentPage = 0;
 
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe(posts => {
-      this.posts = posts;
-      this.allPostsCount = posts.length;
-      // TODO: change to use dynamic pagination from the server
-      this.displayedPosts = posts.slice(0, this.pageSize);
+    this.fetchPosts();
+  }
+
+  private fetchPosts() {
+    this.postsService.getPosts(this.pageSize, this.currentPage + 1).subscribe(postsData => {
+      this.posts = postsData.posts;
+      this.allPostsCount = postsData.postCount;
     });
   }
 
   onPageChange(pageData: PageEvent) {
     // TODO: change to use dynamic pagination from the server
-    let startSlice = pageData.pageIndex * this.pageSize;
-    this.displayedPosts = this.posts.slice(startSlice, startSlice + this.pageSize);
+    this.currentPage = pageData.pageIndex;
     this.pageSize = pageData.pageSize;
+    this.fetchPosts();
   }
 
 }
