@@ -26,8 +26,7 @@ export class ShowPostComponent implements OnInit {
 
   private fetchPost() {
     this.loading = true;
-    this.route.paramMap.subscribe((parmMap: ParamMap) => {
-      const postId = parmMap.get('id');
+    const postId = this.route.snapshot.params.id;
       this.postsService.getPost(postId).subscribe(response => {
         this.loading = false;
         this.post = response.post;
@@ -42,7 +41,6 @@ export class ShowPostComponent implements OnInit {
           ).onAction().subscribe(() => {
             this.fetchPost();
           })
-      })
     })
   }
 
